@@ -1,6 +1,7 @@
 package hackerrank;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class BreadthFirstSearchShortestReach {
     public static void main(String[] args) {
@@ -19,7 +20,9 @@ public class BreadthFirstSearchShortestReach {
                 }
                 int s = sc.nextInt();
 
-                System.out.println(bfs(n, m, edges, s));
+                System.out.println(bfs(n, m, edges, s).stream()
+                                                      .map(String::valueOf)
+                                                      .collect(Collectors.joining(" ")));
             }
         }
     }
